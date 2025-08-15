@@ -10801,6 +10801,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 866577221}
     m_Modifications:
+    - target: {fileID: 348649881745341032, guid: 5ba29934791514b4da3503a66d465db7, type: 3}
+      propertyPath: shrinkAmountPerMove
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1516490940178694359, guid: 5ba29934791514b4da3503a66d465db7, type: 3}
       propertyPath: globalLight
       value: 

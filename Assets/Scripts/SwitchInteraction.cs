@@ -3,12 +3,12 @@ using UnityEngine;
 public class SwitchInteraction : MonoBehaviour
 {
     [Header("Interaction Settings")]
-    public float activationDistance = 2f; // Distance at which player can interact
+    public float activationDistance = 2f;
     public KeyCode interactKey = KeyCode.E;
 
     [Header("UI Prompt")]
-    public GameObject interactPrompt;  // "Press E to interact" text
-    public GameObject messageText;     // "Something has opened!" text
+    public GameObject interactPrompt;
+    public GameObject messageText;
 
     [Header("Switch Sprites")]
     public Sprite closedSprite;
@@ -31,7 +31,6 @@ public class SwitchInteraction : MonoBehaviour
         if (interactPrompt != null) interactPrompt.SetActive(false);
         if (messageText != null) messageText.SetActive(false);
 
-        // Set initial sprite to closed
         if (spriteRenderer != null && closedSprite != null)
             spriteRenderer.sprite = closedSprite;
     }
@@ -44,11 +43,9 @@ public class SwitchInteraction : MonoBehaviour
 
         if (dist <= activationDistance)
         {
-            // Show interact prompt if switch not yet activated
             if (interactPrompt != null && !switchActivated)
                 interactPrompt.SetActive(true);
 
-            // Press E to activate
             if (Input.GetKeyDown(interactKey) && !switchActivated)
             {
                 ActivateSwitch();
@@ -56,12 +53,10 @@ public class SwitchInteraction : MonoBehaviour
         }
         else
         {
-            // Hide all UI when walking away
             if (interactPrompt != null) interactPrompt.SetActive(false);
             if (messageText != null) messageText.SetActive(false);
             switchActivated = false;
 
-            // Reset sprite to closed when walking away
             if (spriteRenderer != null && closedSprite != null)
                 spriteRenderer.sprite = closedSprite;
         }
@@ -71,16 +66,12 @@ public class SwitchInteraction : MonoBehaviour
     {
         switchActivated = true;
 
-        // Hide interact prompt
         if (interactPrompt != null) interactPrompt.SetActive(false);
-        // Show message text
         if (messageText != null) messageText.SetActive(true);
 
-        // Change sprite to open
         if (spriteRenderer != null && openSprite != null)
             spriteRenderer.sprite = openSprite;
 
         Debug.Log("Switch activated!");
-        // TODO: Add additional logic here (e.g., open door)
     }
 }

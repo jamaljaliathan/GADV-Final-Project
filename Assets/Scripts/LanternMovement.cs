@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class LanternMovement : MonoBehaviour
 {
-    public float moveCooldown = 0.2f;  // Time delay between moves
+    public float moveCooldown = 0.2f;
     private float lastMoveTime;
 
     [HideInInspector]
-    public bool canMove = false;  // Player cannot move until Play is clicked
+    public bool canMove = false;
 
     void Update()
     {
-        if (!canMove) return;  // Stop movement if not allowed
+        if (!canMove) return;
 
         if (Time.time - lastMoveTime >= moveCooldown)
         {

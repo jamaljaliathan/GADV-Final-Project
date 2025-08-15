@@ -5,7 +5,7 @@ public class PlayButtonSimple : MonoBehaviour
 {
     public Button playButton;
     public GameObject startMenuUI;
-    public LanternMovement playerMovement;  // Assign your player here
+    public LanternMovement playerMovement;
 
     private void Start()
     {
@@ -18,9 +18,9 @@ public class PlayButtonSimple : MonoBehaviour
     private void OnPlayClicked()
     {
         if (startMenuUI != null)
-            startMenuUI.SetActive(false);  // Hide start menu
+            startMenuUI.SetActive(false);
 
         if (playerMovement != null)
-            playerMovement.canMove = true; // Enable player movement
+            playerMovement.canMove = true;
     }
 }

@@ -3,11 +3,10 @@ using UnityEngine.Rendering.Universal;
 
 public class LightFadeManager : MonoBehaviour
 {
-    public Light2D globalLight;       // Assign your Global Light 2D
-    public float fadeDuration = 3f;   // How long to fade (seconds)
-
+    public Light2D globalLight;
+    public float fadeDuration = 3f;
     private float startIntensity;
-    private float targetIntensity = 0f; // Final intensity after fade
+    private float targetIntensity = 0f;
     private float fadeTimer;
 
     void Start()
@@ -30,7 +29,6 @@ public class LightFadeManager : MonoBehaviour
             fadeTimer += Time.deltaTime;
             float t = Mathf.Clamp01(fadeTimer / fadeDuration);
 
-            // Smooth fade
             globalLight.intensity = Mathf.Lerp(startIntensity, targetIntensity, t);
         }
     }

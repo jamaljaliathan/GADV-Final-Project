@@ -4,9 +4,8 @@ public class DoorController : MonoBehaviour
 {
     public Sprite closedSprite;
     public Sprite openSprite;
-    public GameObject levelClearText;   // Assign your "Level Clear" UI text
-    public GameObject lockedText;       // Assign your "Locked" UI text
-
+    public GameObject levelClearText;
+    public GameObject lockedText;
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
 
@@ -27,18 +26,16 @@ public class DoorController : MonoBehaviour
     {
         if (isOpen) return;
 
-        // Door cannot open if switch hasn’t activated
         if (!SwitchController.isSwitchActivated)
         {
             if (lockedText != null)
             {
                 lockedText.SetActive(true);
-                Invoke("HideLockedText", 2f); // Hide after 2 seconds
+                Invoke("HideLockedText", 2f);
             }
             return;
         }
 
-        // Open the door
         isOpen = true;
 
         if (spriteRenderer != null && openSprite != null)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
-    public DoorController door; // Assign your DoorController
+    public DoorController door;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SwitchController : MonoBehaviour
 {
-    public static bool isSwitchActivated = false;  // Global switch status
-    public DoorController door;                    // Drag the door here
+    public static bool isSwitchActivated = false;
+    public DoorController door;
     public KeyCode interactKey = KeyCode.E;
-    public GameObject interactPrompt;              // Optional: "Press E to interact" UI
+    public GameObject interactPrompt;
 
     private bool playerInRange = false;
 
@@ -30,7 +30,6 @@ public class SwitchController : MonoBehaviour
         if (interactPrompt != null)
             interactPrompt.SetActive(false);
 
-        // Optional: flip switch sprite here
         Debug.Log("Switch activated!");
     }
 

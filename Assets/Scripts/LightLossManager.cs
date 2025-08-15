@@ -6,14 +6,14 @@ using UnityEngine.Rendering.Universal;
 public class LightLossManager : MonoBehaviour
 {
     [Header("Light Settings")]
-    public Light2D playerLight;   // Assign your player's Light2D
-    public float minRadius = 1f;  // When this is reached, player loses
+    public Light2D playerLight;
+    public float minRadius = 1f;
 
     [Header("UI")]
-    public TMP_Text loseText;     // Assign the "You Lose" TMP text
+    public TMP_Text loseText;
 
     [Header("Restart Settings")]
-    public float restartDelay = 2f; // Time in seconds before restarting
+    public float restartDelay = 2f;
 
     private bool hasLost = false;
 
@@ -42,12 +42,10 @@ public class LightLossManager : MonoBehaviour
 
         Debug.Log("You Lose!");
 
-        // Optional: disable player movement
         LanternMovement player = GameObject.FindWithTag("Player")?.GetComponent<LanternMovement>();
         if (player != null)
             player.enabled = false;
 
-        // Restart the level after a delay
         Invoke(nameof(RestartLevel), restartDelay);
     }
 
