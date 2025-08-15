@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class DoorController : MonoBehaviour
     {
         if (isOpen) return;
 
-        // Door cannot open if switch hasn�t activated
+        // Door cannot open if switch hasn’t activated
         if (!SwitchController.isSwitchActivated)
         {
             if (lockedText != null)
